@@ -1,0 +1,32 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/padre.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CRIPTOVIS</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="link" href="{% url 'home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a class="link" href="{% url 'prediccion' %}">Prediction</a></li>
+            {% endif %}
+            <li><a class="link" href="{% url 'contact' %}">Contact</a></li>
+            {% if user.is_authenticated == False %}
+                <li><a class="link" href="{% url 'registro' %}">Regsitro</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <p class="link1">Gracias por su visita</p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+main{
+    display: flex;
+}
+.Div1{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    flex: 3;
+}
+.Div2{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    flex: 6;
+}
+
+.Tit {
+    color: #333;
+}
+p {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #666;
+    font-size: 18px;
+    line-height: 1.6;
+}

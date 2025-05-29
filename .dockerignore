@@ -1,0 +1,8 @@
+./venv
+./.idea
+./Criptovis/__pycache__
+./Prediccion/__pycache__
+Dockerfile
+Readme
+Requirements.txt
+.dockerignore

@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: darkgrey;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+        
+
+#graphic {
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+}
+
+.Principal {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    flex: 8;
+}
+
+.Side{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    flex: 2;
+}
+
+.link {
+    font-size:16px;
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 1%;
+    text-align: center;
+    padding: 8px;
+    box-sizing: border-box;
+    width:15%;
+    color: white;
+    background-color: #008075;
+}
+
+.link button{
+    font-size:16px;
+}
+
+.linkK {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 1%;
+  text-align: center;
+  padding: 6px;
+  box-sizing: border-box;
+  width:11%;
+  color: white;
+  background-color: rgb(6, 6, 23);
+}
+
+.link:hover {
+  background: blue;
+}
+
+.link1 {
+  background-color: darkgrey;
+  color: white;
+  text-align: center;
+}

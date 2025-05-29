@@ -1,0 +1,98 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/padre.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>CRIPTOVIS</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="link" href="{% url 'home' %}">Home</a></li>
+            {% if user.is_authenticated %}
+                <li><a class="link" href="{% url 'prediccion' %}">Prediction</a></li>
+            {% endif %}
+            <li><a class="link" href="{% url 'contact' %}">Contact</a></li>
+            {% if user.is_authenticated %}
+                
+                <form action="{% url 'logout' %}" class="link" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="link_button" style="background:none; border:none; padding:0; cursor:pointer; color:white;">
+                        Cerrar sesion
+                    </button>
+                </form>
+                <li><a href="#" class="linkK">User: {{ user.username }}</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}" class="link">Iniciar sesion</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <main>
+    <section class="Side" >
+        <form method="POST">
+          {% csrf_token %}
+                <h2>Select an option:</h2>
+
+                <select name="opcion_seleccionada">
+                    <option value="General">General</option>
+                    <option value="BTC-USD">BTC</option>
+                    <option value="ETH-USD">ETH</option>
+                    <option value="XRP-USD">XRP</option>
+                    <option value="USDT-USD">USDT</option>
+                    <option value="BNB-USD">BNB</option>
+                    <option value="ADA-USD">ADA</option>
+                    <option value="SOL-USD">SOL</option>
+                    <option value="DOGE-USD">DOGE</option>
+                </select>
+          <input type="submit" value="Send">
+        </form>
+
+    </section>
+
+    <section class="Principal">
+        <h2>Historical Graphic</h2>
+        <div id="graphic">
+            <canvas id="myChart3" width="450" height="450"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart3').getContext('2d');
+                var labels = {{ labels|safe }};
+                var data = {{ data|safe }};
+
+                const myChart3 = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '{{ moneda }}',
+                            data: data,
+                            backgroundColor: 'rgba(30,141,141,0.93)',
+                            borderColor: 'rgb(6,6,23)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+            </script>
+        </div>
+    </section>
+    </main>
+    {% block content %}
+    {% endblock %}
+
+    <p class="link1">Gracias por su visita</p>
+
+</body>
+</html>

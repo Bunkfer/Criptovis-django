@@ -1,0 +1,46 @@
+{% extends "Padre.html" %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <main>
+        <section class="Div1">
+            <br><br><br>
+            {% if moneda == 'BTC-USD' %}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/dsTDTa1aP7M?si=StaTot2JqioWgEOe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% elif moneda == 'ETH-USD' %}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/36t2S6NeUgU?si=xcRFNGMCoDeB2O44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% elif moneda == 'XRP-USD' %}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/AZChStb5T4A?si=X_qHWEbKZFx0Qfxd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% else %}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/CXmXi9tLPfU?si=oWLKTYqohGw6ll3X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {% endif %}
+        </section>
+
+        <section class="Div2">
+            {% if moneda == 'BTC-USD' %}
+                <h1 class="Tit">Funcionamiento del Bitcoin (BTC):</h1>
+                <p>Blockchain: El Bitcoin opera en una red de blockchain, que es una cadena de bloques de transacciones interconectadas. Cada bloque contiene un grupo de transacciones y está vinculado al bloque anterior, formando una cadena inmutable.</p>
+                <p>Minería: Los mineros son nodos de la red que compiten para resolver complejos problemas matemáticos. El primero en resolverlo agrega un nuevo bloque a la cadena y es recompensado con BTC. Esto asegura la seguridad y la integridad de la red.</p>
+                <p>Transacciones: Los usuarios pueden enviar BTC de una billetera digital a otra utilizando direcciones criptográficas. Cada transacción se verifica y registra en la cadena de bloques, lo que garantiza la transparencia y la trazabilidad.</p>
+                <p>Escasez programada: A diferencia de las monedas tradicionales, como el dólar, el Bitcoin tiene una oferta limitada. Solo se crearán 21 millones de BTC en total, lo que lo hace deflacionario y potencialmente valioso a largo plazo.</p>
+            {% elif moneda == 'ETH-USD' %}
+                <h1 class="Tit">Funcionamiento de Ethereum (ETH):</h1>
+                <p>Blockchain: Ethereum utiliza una tecnología de blockchain similar a la de Bitcoin, pero con algunas diferencias clave. Al igual que Bitcoin, cada transacción se registra en bloques, pero Ethereum va más allá al permitir la ejecución de programas autónomos llamados "contratos inteligentes" en su cadena de bloques.</p>
+                <p>Contratos inteligentes: Los contratos inteligentes son programas informáticos autoejecutables diseñados para automatizar acuerdos y transacciones. Pueden realizar acciones automáticamente cuando se cumplen ciertas condiciones, lo que elimina la necesidad de intermediarios y hace que Ethereum sea una plataforma versátil para aplicaciones descentralizadas (dApps).</p>
+                <p>Gas: Para ejecutar transacciones y contratos inteligentes en Ethereum, los usuarios deben pagar una tarifa en ETH llamada "gas". Esta tarifa compensa a los mineros de la red por el poder de cómputo que utilizan para procesar las operaciones.</p>
+            {% elif moneda == 'XRP-USD' %}
+                <h1 class="Tit">Funcionamiento de XRP:</h1>
+                <p>Tecnología Ripple: XRP opera en la tecnología Ripple, que se centra en facilitar pagos internacionales y transacciones financieras de manera eficiente y asequible.</p>
+                <p>Red de confianza: Ripple utiliza una red de confianza compuesta por instituciones financieras y bancos para facilitar las transferencias de valor. A diferencia de las criptomonedas descentralizadas como Bitcoin, Ripple es más centralizado y trabaja en estrecha colaboración con estas instituciones.</p>
+                <p>XRP como puente: XRP desempeña un papel fundamental en el ecosistema Ripple como un puente de conversión entre diferentes monedas fiduciarias. Esto significa que XRP se utiliza para facilitar la transferencia de valor entre monedas diferentes, lo que a menudo es más rápido y económico que los métodos tradicionales.</p>
+            {% else %}
+                <h1 class="Tit">Discover the Fascinating World of Cryptocurrencies</h1>
+                <p>Cryptocurrencies are a revolution in the financial world that has taken the world by surprise in the last decade. These digital currencies, backed by blockchain technology, have transformed the way we understand and use money.</p>
+                <p>The most notable thing about cryptocurrencies is their decentralization. Unlike traditional currencies, such as the dollar or the euro, cryptocurrencies are not controlled by any government or central entity. Instead, they use a technology called blockchain to securely and transparently record and verify all transactions.</p>
+                <p>The value of cryptocurrencies can be highly volatile, which has led some to see them as an exciting investment. However, it is also important to understand the associated risks, as prices can rise and fall significantly in a short period of time.</p>
+            {% endif %}
+
+        </section>
+    </main>
+{% endblock %}
+

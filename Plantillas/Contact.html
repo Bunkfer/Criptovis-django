@@ -1,0 +1,29 @@
+{% extends "Padre_Solo.html" %} 
+{% load crispy_forms_filters %} 
+{% block content%}
+  <style>
+    .Forma {
+      margin: 40px;
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+  </style>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+
+  <main>
+    <form action="" class="Forma" method="post">
+      {% csrf_token %} 
+      {{form|crispy }}
+
+      <br /><br /><br />
+      <input type="submit" value="Send" />
+      <input type="reset" value="Reset" />
+    </form>
+    {{ mensaje }}
+  </main>
+{% endblock %}

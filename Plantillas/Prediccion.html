@@ -1,0 +1,55 @@
+{% extends "Padre.html" %}
+{% load static %}
+{% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/prediccion.css' %}">
+    <main>
+        <section class="Div1">
+            <H1 class="Tit">Prediction Resume</H1>
+        </section>
+
+        <section class="Div2">
+
+            <h2>Prediction Graphic</h2>
+
+            <div id="graphic2">
+                <canvas id="myChart2" width="700" height="700"></canvas>
+                <script>
+                    const ctx2 = document.getElementById('myChart2').getContext('2d');
+                    var labels2 = {{ labels2|safe }};
+                    var y_test = {{ y_test|safe }};
+                    var y_pred = {{ y_pred|safe }};
+
+                    const myChart2 = new Chart(ctx2, {
+                        type: 'line',
+                        data: {
+                            labels: labels2,
+                            datasets: [
+                            {
+                                label: 'Predicted Prices',
+                                data: y_pred,
+                                backgroundColor: 'rgba(222,85,14,0.54)',
+                                borderColor: 'rgb(232,67,7)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'Actual Prices',
+                                data: y_test,
+                                backgroundColor: 'rgba(10,40,189,0.2)',
+                                borderColor: 'rgb(19,48,224)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+        </section>
+    </main>
+{% endblock %}
