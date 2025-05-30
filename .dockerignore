@@ -3,6 +3,7 @@
 ./Criptovis/__pycache__
 ./Prediccion/__pycache__
 Dockerfile
-Readme
+Readme.md
 Requirements.txt
 .dockerignore
+instrucciones.txt
